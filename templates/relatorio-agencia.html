@@ -1,0 +1,1034 @@
+<title>INTERNO — Análise Estratégica: Luiza Ferraz</title>
+
+<style>
+  /* Committed single-theme: this document is always black.
+     The colour IS the safeguard against sending it to a client,
+     so it must not flip to white under anyone's light theme. */
+  :root {
+    --black: #0A0A0A;
+    --black-2: #151513;
+    --black-3: #1E1E1B;
+    --bone: #F4F1E7;
+    --bone-2: #C9C5B8;
+    --muted: #8A8578;
+    --line: #2C2C29;
+    --line-2: #3A3A35;
+
+    --green: #6FCE15;
+    --green-2: #9BE84C;
+    --green-tint: #1C2A0E;
+    --red: #E8503A;
+    --red-deep: #970000;
+    --red-tint: #2B120E;
+    --amber: #E0A62A;
+    --amber-tint: #2A2110;
+
+    --display: Impact, Haettenschweiler, "Arial Narrow Bold", "Franklin Gothic Heavy", sans-serif;
+    --ui: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  body {
+    background: var(--black);
+    color: var(--bone);
+    font-family: var(--ui);
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9;
+    opacity: 0.3;
+    mix-blend-mode: screen;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.2'/%3E%3C/svg%3E");
+  }
+
+  .band {
+    background: var(--red-deep);
+    color: #FFFFFF;
+    text-align: center;
+    padding: 8px 16px;
+    font-family: var(--display);
+    font-size: 15px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 10;
+  }
+
+  .wrap {
+    max-width: 950px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pad { padding-inline: 26px; }
+
+  /* ---------- masthead ---------- */
+
+  .masthead {
+    padding: 26px 26px 22px;
+    border-bottom: 4px solid var(--green);
+  }
+
+  .masthead-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+    color: var(--bone-2);
+  }
+
+  .masthead-brand { display: flex; align-items: center; gap: 11px; }
+
+  .lebre {
+    display: block;
+    width: 38px;
+    height: 32px;
+    background-color: var(--green);
+    -webkit-mask-image: url("data:image/png;base64,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");
+    mask-image: url("data:image/png;base64,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");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
+    flex: none;
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-size: clamp(38px, 9vw, 72px);
+    line-height: 0.88;
+    text-transform: uppercase;
+    text-wrap: balance;
+  }
+
+  .subhead {
+    font-family: var(--display);
+    font-size: clamp(20px, 4.5vw, 32px);
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-top: 3px;
+  }
+
+  /* ---------- sections ---------- */
+
+  section { padding-block: 30px; }
+
+  .sec-head {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 18px;
+  }
+
+  .sec-title {
+    font-family: var(--display);
+    font-size: clamp(21px, 4.4vw, 30px);
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .sec-line { flex: 1; height: 3px; background: var(--green); }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--display);
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 6px 16px 4px;
+    border: 2px solid var(--bone);
+    border-radius: 50%;
+    white-space: nowrap;
+    line-height: 1;
+  }
+
+  .note {
+    font-size: 13px;
+    color: var(--muted);
+    max-width: 76ch;
+    margin-top: 13px;
+    line-height: 1.55;
+  }
+
+  .note b { color: var(--bone-2); font-weight: 700; }
+
+  /* ---------- diagnosis ---------- */
+
+  .diag {
+    border-left: 4px solid var(--green);
+    padding-left: 20px;
+  }
+
+  .diag p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--bone-2);
+    max-width: 70ch;
+  }
+
+  .diag p + p { margin-top: 12px; }
+
+  .diag b { color: var(--bone); font-weight: 700; }
+
+  .diag mark {
+    background: var(--amber-tint);
+    color: var(--amber);
+    padding: 1px 6px;
+    font-weight: 600;
+  }
+
+  /* ---------- tables ---------- */
+
+  .tw {
+    overflow-x: auto;
+    border: 2px solid var(--line-2);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    min-width: 580px;
+  }
+
+  th {
+    text-align: left;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 11px 13px;
+    border-bottom: 2px solid var(--line-2);
+    white-space: nowrap;
+    background: var(--black-2);
+  }
+
+  td {
+    padding: 10px 13px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: middle;
+  }
+
+  tr:last-child td { border-bottom: 0; }
+
+  /* Highlighted rows lift with a neutral tone plus a green edge, not a green wash. */
+  tr.hl td { background: var(--black-3); }
+  tr.hl td:first-child { box-shadow: inset 4px 0 0 var(--green); }
+
+  .n {
+    font-family: var(--display);
+    font-size: 18px;
+    letter-spacing: 0.01em;
+    text-align: right;
+    white-space: nowrap;
+    line-height: 1;
+  }
+
+  th.n { text-align: right; font-family: var(--ui); font-size: 10px; }
+
+  .lbl { font-weight: 600; white-space: nowrap; }
+
+  .tbar {
+    display: block;
+    min-width: 70px;
+    height: 8px;
+    background: var(--black-3);
+    border: 1px solid var(--line-2);
+  }
+
+  .tbar span { display: block; height: 100%; background: var(--green); }
+
+  /* ---------- deltas & chips ---------- */
+
+  .delta {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .delta.up { color: var(--green-2); background: var(--black-3); }
+  .delta.down { color: var(--red); background: var(--black-3); }
+  .delta.flat { color: var(--muted); background: var(--black-3); }
+
+  .chip {
+    display: inline-block;
+    font-family: var(--display);
+    font-size: 13px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 4px 12px 2px;
+    border-radius: 50%;
+    white-space: nowrap;
+    line-height: 1.15;
+  }
+
+  .chip.alto { color: #FFF; background: var(--red-deep); }
+  .chip.medio { color: var(--amber); border: 2px solid var(--amber); }
+  .chip.baixo { color: var(--muted); border: 2px solid var(--line-2); }
+
+  /* ---------- figures ---------- */
+
+  .figures {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2px;
+    background: var(--line-2);
+    border: 2px solid var(--line-2);
+  }
+
+  .fig {
+    background: var(--black);
+    padding: 15px 16px 17px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .fig-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.35;
+  }
+
+  .fig-value {
+    font-family: var(--display);
+    font-size: 36px;
+    line-height: 0.85;
+  }
+
+  .fig-sub { font-size: 11.5px; color: var(--muted); line-height: 1.45; }
+
+  /* ---------- callout ---------- */
+
+  /* No green fills behind text — green stays on rules, bars and numerals. */
+  .callout {
+    border: 3px solid var(--green);
+    background: var(--black-2);
+    padding: 18px 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .callout-v {
+    font-family: var(--display);
+    font-size: 46px;
+    line-height: 0.85;
+    color: var(--green);
+    flex: none;
+  }
+
+  .callout-t {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--bone-2);
+    max-width: 62ch;
+    min-width: 220px;
+    flex: 1;
+  }
+
+  .callout-t b { color: var(--bone); }
+
+  /* ---------- risks ---------- */
+
+  .risks { display: flex; flex-direction: column; gap: 2px; }
+
+  .risk {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 7px 15px;
+    align-items: start;
+    padding: 15px 0;
+    border-bottom: 2px solid var(--line);
+  }
+
+  .risk-t { font-size: 15px; font-weight: 700; align-self: center; }
+
+  .risk-b {
+    grid-column: 2;
+    font-size: 13px;
+    color: var(--bone-2);
+    max-width: 78ch;
+    line-height: 1.55;
+  }
+
+  .risk-b b { color: var(--green-2); font-weight: 700; }
+
+  @media (max-width: 540px) {
+    .risk { grid-template-columns: 1fr; }
+    .risk-b { grid-column: 1; }
+  }
+
+  /* ---------- hypotheses ---------- */
+
+  .hyps { display: flex; flex-direction: column; gap: 2px; }
+
+  .hyp {
+    border: 2px solid var(--line-2);
+    padding: 15px 17px;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+  }
+
+  .hyp-top { display: flex; align-items: baseline; gap: 12px; }
+
+  .hyp-id {
+    font-family: var(--display);
+    font-size: 24px;
+    color: var(--green);
+    line-height: 1;
+    flex: none;
+  }
+
+  .hyp-claim {
+    font-size: 14.5px;
+    font-weight: 700;
+    line-height: 1.4;
+    max-width: 68ch;
+  }
+
+  .hyp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+    gap: 12px;
+    padding-top: 11px;
+    border-top: 1px solid var(--line);
+  }
+
+  .hyp-l {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .hyp-v { font-size: 12.5px; color: var(--bone-2); line-height: 1.45; }
+  .hyp-v b { color: var(--green-2); font-weight: 700; }
+
+  /* ---------- data notes ---------- */
+
+  .notes { border: 2px dashed var(--line-2); padding: 17px 19px; }
+
+  .notes ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+
+  .notes li {
+    font-size: 12.5px;
+    color: var(--bone-2);
+    line-height: 1.5;
+    padding-left: 18px;
+    position: relative;
+    max-width: 80ch;
+  }
+
+  .notes li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 8px;
+    height: 8px;
+    background: var(--green);
+  }
+
+  .notes b { color: var(--bone); }
+
+  .notes code {
+    font-family: ui-monospace, Consolas, monospace;
+    font-size: 11.5px;
+    background: var(--black-3);
+    border: 1px solid var(--line-2);
+    padding: 1px 5px;
+  }
+
+  /* ---------- footer ---------- */
+
+  .foot {
+    border-top: 4px solid var(--green);
+    padding: 20px 26px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* ---------- print: invert to save toner, keep the INTERNO marks ---------- */
+
+  @media print {
+    @page { size: A4; margin: 9mm 10mm; }
+    :root {
+      --black: #FFFFFF;
+      --black-2: #F2EFE5;
+      --black-3: #EDE9DC;
+      --bone: #0A0A0A;
+      --bone-2: #2E2C28;
+      --muted: #5F5B52;
+      --line: #D5D0BE;
+      --line-2: #B0AB9A;
+      --green: #3A6A08;
+      --green-2: #2F5606;
+      --green-tint: #EDF7DF;
+      --red: #970000;
+      --amber: #7A5607;
+      --amber-tint: #FAF1DC;
+      --red-tint: #F8E6E6;
+    }
+    body { background: #FFFFFF; font-size: 8.8px; line-height: 1.38; }
+    body::before { display: none; }
+
+    /* the INTERNO band repeats on every printed page */
+    .band {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      font-size: 10px;
+      padding: 4px 10px;
+      letter-spacing: 0.14em;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .wrap { padding-top: 20px; max-width: none; }
+    .pad { padding-inline: 0; }
+
+    .masthead { padding: 0 0 8px; border-bottom-width: 3px; }
+    .masthead-top { font-size: 8px; margin-bottom: 5px; }
+    .lebre { width: 23px; height: 20px; }
+    h1 { font-size: 29px; }
+    .subhead { font-size: 14px; }
+
+    section { padding-block: 9px; }
+    .sec-head { margin-bottom: 7px; gap: 8px; }
+    .sec-title { font-size: 13.5px; }
+    .sec-line { height: 2px; }
+    .badge { font-size: 9px; padding: 3px 10px 2px; border-width: 1.5px; }
+    .note { font-size: 8px; margin-top: 6px; max-width: none; }
+
+    .diag { padding-left: 12px; border-left-width: 3px; }
+    .diag p { font-size: 9px; max-width: none; }
+    .diag p + p { margin-top: 6px; }
+
+    .tw { border-width: 1.5px; }
+    table { font-size: 8.2px; min-width: 0; }
+    th { font-size: 6.8px; padding: 4px 6px; }
+    td { padding: 3.5px 6px; }
+    .n { font-size: 11px; }
+    .tbar { height: 6px; min-width: 44px; }
+    .delta { font-size: 7.5px; padding: 1px 5px; }
+
+    .figures { border-width: 1.5px; grid-template-columns: repeat(4, 1fr); }
+    .fig { padding: 8px 9px; gap: 4px; }
+    .fig-label { font-size: 7px; }
+    .fig-value { font-size: 21px; }
+    .fig-sub { font-size: 7.5px; }
+
+    .callout { padding: 10px 12px; gap: 14px; border-width: 2px; }
+    .callout-v { font-size: 28px; }
+    .callout-t { font-size: 8.5px; min-width: 170px; max-width: none; }
+
+    .risk { padding: 7px 0; gap: 4px 11px; border-bottom-width: 1.5px; }
+    .risk-t { font-size: 9.5px; }
+    .risk-b { font-size: 8.2px; max-width: none; }
+    .chip { font-size: 8.5px; padding: 2px 8px 1px; border-width: 1.5px; }
+
+    /* hypotheses pair up side by side on paper */
+    .hyps { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; }
+    .hyp { padding: 8px 10px; gap: 7px; border-width: 1.5px; }
+    .hyp-id { font-size: 15px; }
+    .hyp-claim { font-size: 9px; max-width: none; }
+    .hyp-grid { grid-template-columns: 1fr; gap: 5px; padding-top: 6px; }
+    .hyp-l { font-size: 6.8px; margin-bottom: 1px; }
+    .hyp-v { font-size: 8px; }
+
+    .notes { padding: 10px 12px; border-width: 1.5px; }
+    .notes ul { gap: 5px; }
+    .notes li { font-size: 8px; padding-left: 13px; max-width: none; }
+    .notes li::before { width: 5px; height: 5px; top: 5px; }
+    .notes code { font-size: 7.5px; }
+
+    .foot { padding: 9px 0 0; font-size: 7.5px; border-top-width: 3px; }
+
+    .sec-line, .fig-value, .tbar span, .hyp-id, .callout, .subhead,
+    .lebre, .chip, .notes li::before, tr.hl td {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .tw, .figures, .risk, .hyp, .notes, .callout, .fig { break-inside: avoid; }
+  }
+</style>
+
+<div class="band">Documento interno · Não enviar ao cliente</div>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-top">
+      <div class="masthead-brand">
+        <span class="lebre" role="img" aria-label="Agência Lebre"></span>
+        <span>AGÊNCIA LEBRE · ANÁLISE ESTRATÉGICA</span>
+      </div>
+      <span>FECHAMENTO</span>
+    </div>
+    <h1>Luiza Ferraz</h1>
+    <div class="subhead">Julho 2026</div>
+  </header>
+
+  <section class="pad">
+    <div class="sec-head">
+      <span class="badge">Leitura</span>
+      <div class="sec-line"></div>
+    </div>
+    <div class="diag">
+      <p><b>Julho parece o melhor mês do ano, e é — mas o número que importa está piorando.</b> O público total cresceu 5,3%, o menor percentual desde fevereiro. A curva desacelera há <mark>quatro meses seguidos</mark>: 7,9% → 7,1% → 7,2% → 6,3% → 5,3%. Ganhamos mais gente em números absolutos porque a base é maior, não porque estamos performando melhor.</p>
+      <p>Ao mesmo tempo o Spotify acelerou: <b>+16,6% de ouvintes mensais</b>, com Beira-Mar respondendo sozinha por 41% dos streams. A leitura combinada é específica e acionável: <b>o conteúdo converte bem para escuta e mal para seguir</b>. A pessoa vê o vídeo, vai ouvir a música e não volta ao perfil.</p>
+      <p>O pico de julho é evento, não patamar — foi puxado pelo lançamento do clipe. Sem estímulo equivalente em agosto, a projeção é de queda entre 8% e 15% em alcance. <mark>Alinhar isso com a artista antes do relatório de agosto</mark>, não depois.</p>
+    </div>
+  </section>
+
+  <section class="pad">
+    <div class="sec-head">
+      <h2 class="sec-title">Tendência de 6 meses</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="tw">
+      <table>
+        <thead>
+          <tr>
+            <th>Mês</th>
+            <th class="n">Público</th>
+            <th class="n">Var.</th>
+            <th>Curva</th>
+            <th class="n">Ouvintes Spotify</th>
+            <th class="n">Var.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="lbl">Fevereiro</td>
+            <td class="n">98.400</td>
+            <td class="n"><span class="delta flat">—</span></td>
+            <td><span class="tbar"><span style="width:72.1%"></span></span></td>
+            <td class="n">41.200</td>
+            <td class="n"><span class="delta flat">—</span></td>
+          </tr>
+          <tr>
+            <td class="lbl">Março</td>
+            <td class="n">106.200</td>
+            <td class="n"><span class="delta up">▲ 7,9%</span></td>
+            <td><span class="tbar"><span style="width:77.8%"></span></span></td>
+            <td class="n">48.600</td>
+            <td class="n"><span class="delta up">▲ 18,0%</span></td>
+          </tr>
+          <tr>
+            <td class="lbl">Abril</td>
+            <td class="n">113.700</td>
+            <td class="n"><span class="delta up">▲ 7,1%</span></td>
+            <td><span class="tbar"><span style="width:83.3%"></span></span></td>
+            <td class="n">52.300</td>
+            <td class="n"><span class="delta up">▲ 7,6%</span></td>
+          </tr>
+          <tr>
+            <td class="lbl">Maio</td>
+            <td class="n">121.900</td>
+            <td class="n"><span class="delta up">▲ 7,2%</span></td>
+            <td><span class="tbar"><span style="width:89.3%"></span></span></td>
+            <td class="n">61.800</td>
+            <td class="n"><span class="delta up">▲ 18,2%</span></td>
+          </tr>
+          <tr>
+            <td class="lbl">Junho</td>
+            <td class="n">129.548</td>
+            <td class="n"><span class="delta up">▲ 6,3%</span></td>
+            <td><span class="tbar"><span style="width:94.9%"></span></span></td>
+            <td class="n">74.890</td>
+            <td class="n"><span class="delta up">▲ 21,2%</span></td>
+          </tr>
+          <tr class="hl">
+            <td class="lbl">Julho</td>
+            <td class="n">136.460</td>
+            <td class="n"><span class="delta up">▲ 5,3%</span></td>
+            <td><span class="tbar"><span style="width:100%"></span></span></td>
+            <td class="n">87.340</td>
+            <td class="n"><span class="delta up">▲ 16,6%</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">A coluna de variação do público é a que merece atenção: cai de forma monotônica desde março. O relatório do cliente mostra só a variação do mês, que isolada parece ótima. É aqui que vemos que não é.</p>
+  </section>
+
+  <section class="pad">
+    <div class="sec-head">
+      <h2 class="sec-title">Indicadores de gestão</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="figures">
+      <div class="fig">
+        <div class="fig-label">Custo por seguidor novo</div>
+        <div class="fig-value">R$ 1,88</div>
+        <div class="fig-sub">Fee ÷ 6.912 seguidores. Em junho: R$ 1,70.</div>
+      </div>
+      <div class="fig">
+        <div class="fig-label">Horas de produção</div>
+        <div class="fig-value">43h</div>
+        <div class="fig-sub">Fora as 40h do clipe, terceirizadas.</div>
+      </div>
+      <div class="fig">
+        <div class="fig-label">Alcance por hora</div>
+        <div class="fig-value">29.860</div>
+        <div class="fig-sub">Média ponderada. Ver quebra por formato.</div>
+      </div>
+      <div class="fig">
+        <div class="fig-label">Dependência de 1 faixa</div>
+        <div class="fig-value">41%</div>
+        <div class="fig-sub">Beira-Mar sobre o total de streams.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad">
+    <div class="sec-head">
+      <span class="badge">Foco</span>
+      <h2 class="sec-title">YouTube</h2>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="tw" style="margin-bottom:20px">
+      <table>
+        <thead>
+          <tr>
+            <th>Vídeo</th>
+            <th class="n">Duração</th>
+            <th class="n">Views</th>
+            <th class="n">Retenção</th>
+            <th class="n">Inscritos</th>
+            <th class="n">Conversão</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="lbl">Shorts: trecho do clipe</td>
+            <td class="n">0:45</td>
+            <td class="n">89.400</td>
+            <td class="n">84%</td>
+            <td class="n">+64</td>
+            <td class="n">0,07%</td>
+          </tr>
+          <tr class="hl">
+            <td class="lbl">Beira-Mar (Clipe Oficial)</td>
+            <td class="n">4:12</td>
+            <td class="n">62.100</td>
+            <td class="n">61%</td>
+            <td class="n">+287</td>
+            <td class="n">0,46%</td>
+          </tr>
+          <tr class="hl">
+            <td class="lbl">Ao vivo no estúdio: acústico</td>
+            <td class="n">3:05</td>
+            <td class="n">48.300</td>
+            <td class="n">68%</td>
+            <td class="n">+192</td>
+            <td class="n">0,40%</td>
+          </tr>
+          <tr>
+            <td class="lbl">Bastidores da gravação</td>
+            <td class="n">5:20</td>
+            <td class="n">27.600</td>
+            <td class="n">44%</td>
+            <td class="n">+51</td>
+            <td class="n">0,18%</td>
+          </tr>
+          <tr>
+            <td class="lbl">Shorts: refrão ao vivo</td>
+            <td class="n">0:38</td>
+            <td class="n">18.400</td>
+            <td class="n">79%</td>
+            <td class="n">+26</td>
+            <td class="n">0,14%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <div class="callout-v">4,6×</div>
+      <div class="callout-t">Vídeo longo converte <b>4,6 vezes mais inscritos por view</b> que Shorts (0,38% contra 0,08%). Mas Shorts custam <b>2 minutos de produção por inscrito</b> contra 3 minutos do vídeo longo — ou seja, Shorts não são piores, são outra etapa do funil. A conclusão não é cortar Shorts: é parar de esperar que eles tragam inscrito.</div>
+    </div>
+
+    <div class="tw" style="margin-top:20px">
+      <table>
+        <thead>
+          <tr>
+            <th>Formato</th>
+            <th class="n">Views</th>
+            <th class="n">Inscritos</th>
+            <th class="n">Conv. por view</th>
+            <th class="n">Horas</th>
+            <th class="n">Min. por inscrito</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="lbl">Shorts</td>
+            <td class="n">107.800</td>
+            <td class="n">+90</td>
+            <td class="n">0,08%</td>
+            <td class="n">3</td>
+            <td class="n">2,0</td>
+          </tr>
+          <tr>
+            <td class="lbl">Longo (sem clipe)</td>
+            <td class="n">75.900</td>
+            <td class="n">+243</td>
+            <td class="n">0,32%</td>
+            <td class="n">12</td>
+            <td class="n">3,0</td>
+          </tr>
+          <tr>
+            <td class="lbl">Clipe oficial</td>
+            <td class="n">62.100</td>
+            <td class="n">+287</td>
+            <td class="n">0,46%</td>
+            <td class="n">40</td>
+            <td class="n">8,4</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="note"><b>Bastidores da gravação é o problema da tabela.</b> Tem 5:20 e retenção de 44% — a menor do canal. Todos os outros vídeos com retenção acima de 60% têm menos de 4:15. Cortar o formato para 3 minutos deve recuperar entre 15 e 20 pontos de retenção, que é o que o algoritmo usa para decidir se recomenda. Tráfego do mês: sugeridos 38%, feed de Shorts 27%, busca 14%, redes sociais 12%, página inicial 9%. Sugeridos como maior fonte é sinal saudável — o YouTube está distribuindo para quem ainda não conhece a artista.</p>
+  </section>
+
+  <section class="pad">
+    <div class="sec-head">
+      <h2 class="sec-title">Retorno por formato</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="tw">
+      <table>
+        <thead>
+          <tr>
+            <th>Formato</th>
+            <th class="n">Posts</th>
+            <th class="n">Alcance médio</th>
+            <th class="n">Engaj.</th>
+            <th class="n">Horas</th>
+            <th class="n">Alcance / hora</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="hl">
+            <td class="lbl">Bastidor / acústico</td>
+            <td class="n">6</td>
+            <td class="n">87.400</td>
+            <td class="n">9,1%</td>
+            <td class="n">9</td>
+            <td class="n">58.267</td>
+          </tr>
+          <tr>
+            <td class="lbl">Reels produzido</td>
+            <td class="n">4</td>
+            <td class="n">64.200</td>
+            <td class="n">6,8%</td>
+            <td class="n">16</td>
+            <td class="n">16.050</td>
+          </tr>
+          <tr>
+            <td class="lbl">Clipe YouTube</td>
+            <td class="n">1</td>
+            <td class="n">62.100</td>
+            <td class="n">5,6%</td>
+            <td class="n">40</td>
+            <td class="n">1.553</td>
+          </tr>
+          <tr>
+            <td class="lbl">Arte estática</td>
+            <td class="n">8</td>
+            <td class="n">3.900</td>
+            <td class="n">0,9%</td>
+            <td class="n">8</td>
+            <td class="n">3.900</td>
+          </tr>
+          <tr>
+            <td class="lbl">Carrossel</td>
+            <td class="n">5</td>
+            <td class="n">6.800</td>
+            <td class="n">1,4%</td>
+            <td class="n">10</td>
+            <td class="n">3.400</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Bastidor e acústico entregam <b>15 vezes mais alcance por hora</b> que carrossel e custam menos para produzir. Carrossel e arte estática somam 18 horas — 42% do tempo do mês — para 8% do alcance. É a realocação mais óbvia do trimestre. O clipe tem o pior retorno por hora da tabela, mas é investimento de catálogo e de Spotify: <b>não cortar com base nesta coluna</b>.</p>
+  </section>
+
+  <section class="pad">
+    <div class="sec-head">
+      <h2 class="sec-title">Riscos</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="risks">
+      <div class="risk">
+        <span class="chip alto">Alto</span>
+        <div class="risk-t">Expectativa da artista descolada de agosto</div>
+        <div class="risk-b">Julho foi pico por lançamento. Agosto deve recuar entre <b>8%</b> e <b>15%</b> em alcance sem novo estímulo. Se a conversa não acontecer antes, o relatório de agosto vira crise de confiança. Alinhar em reunião, não por mensagem.</div>
+      </div>
+      <div class="risk">
+        <span class="chip alto">Alto</span>
+        <div class="risk-t">Desaceleração consistente de seguidores</div>
+        <div class="risk-b">Quarto mês consecutivo de queda no percentual (<b>7,9%</b> → <b>5,3%</b>). O conteúdo converte para escuta e não para seguir. Nenhum dos 6 posts de bastidor tinha chamada explícita para seguir o perfil.</div>
+      </div>
+      <div class="risk">
+        <span class="chip medio">Médio</span>
+        <div class="risk-t">Concentração de catálogo em uma faixa</div>
+        <div class="risk-b">Beira-Mar responde por <b>41%</b> dos streams. Quando o efeito do lançamento passar, a queda no Spotify será proporcionalmente maior que a das redes. Mitigar puxando faixas antigas no conteúdo de bastidor.</div>
+      </div>
+      <div class="risk">
+        <span class="chip baixo">Baixo</span>
+        <div class="risk-t">Facebook não paga o custo de manutenção</div>
+        <div class="risk-b">Crescimento de <b>0,7%</b> e o pior engajamento do mês. Manter apenas replicação automática, sem conteúdo dedicado. Não comunicar como abandono ao cliente — enquadrar como foco.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad">
+    <div class="sec-head">
+      <h2 class="sec-title">Hipóteses para agosto</h2>
+      <div class="sec-line"></div>
+    </div>
+    <p class="note" style="margin-top:0;margin-bottom:16px">Cada aposta vira uma afirmação que setembro pode desmentir. Se não dá para dizer o que faria a hipótese falhar, não é estratégia — é palpite.</p>
+    <div class="hyps">
+      <div class="hyp">
+        <div class="hyp-top">
+          <span class="hyp-id">H1</span>
+          <span class="hyp-claim">Bastidor semanal sustenta o engajamento mesmo sem o impulso do clipe.</span>
+        </div>
+        <div class="hyp-grid">
+          <div><div class="hyp-l">Como medir</div><div class="hyp-v">Engajamento médio dos posts de bastidor em agosto</div></div>
+          <div><div class="hyp-l">Sucesso</div><div class="hyp-v">≥ <b>7,0%</b></div></div>
+          <div><div class="hyp-l">Se falhar</div><div class="hyp-v">O formato dependia do lançamento; testar série narrativa</div></div>
+        </div>
+      </div>
+      <div class="hyp">
+        <div class="hyp-top">
+          <span class="hyp-id">H2</span>
+          <span class="hyp-claim">Convite em vídeo para show supera a arte estática em pelo menos 3 vezes.</span>
+        </div>
+        <div class="hyp-grid">
+          <div><div class="hyp-l">Como medir</div><div class="hyp-v">Engajamento do vídeo vs. média de estática (0,9%)</div></div>
+          <div><div class="hyp-l">Sucesso</div><div class="hyp-v">≥ <b>2,7%</b></div></div>
+          <div><div class="hyp-l">Se falhar</div><div class="hyp-v">O problema é o assunto "show", não o formato; revisar segmentação</div></div>
+        </div>
+      </div>
+      <div class="hyp">
+        <div class="hyp-top">
+          <span class="hyp-id">H3</span>
+          <span class="hyp-claim">Chamada para seguir nos vídeos de maior alcance reverte a desaceleração.</span>
+        </div>
+        <div class="hyp-grid">
+          <div><div class="hyp-l">Como medir</div><div class="hyp-v">Variação percentual do público total em agosto</div></div>
+          <div><div class="hyp-l">Sucesso</div><div class="hyp-v">≥ <b>6,0%</b> — quebra a série de quedas</div></div>
+          <div><div class="hyp-l">Se falhar</div><div class="hyp-v">É saturação de nicho; discutir tráfego pago com a artista</div></div>
+        </div>
+      </div>
+      <div class="hyp">
+        <div class="hyp-top">
+          <span class="hyp-id">H4</span>
+          <span class="hyp-claim">Cortar bastidores de 5:20 para 3:00 recupera retenção no YouTube.</span>
+        </div>
+        <div class="hyp-grid">
+          <div><div class="hyp-l">Como medir</div><div class="hyp-v">Retenção média do próximo vídeo de bastidor</div></div>
+          <div><div class="hyp-l">Sucesso</div><div class="hyp-v">≥ <b>60%</b> (hoje: 44%)</div></div>
+          <div><div class="hyp-l">Se falhar</div><div class="hyp-v">O problema é o conteúdo, não a duração; revisar os 30s iniciais</div></div>
+        </div>
+      </div>
+      <div class="hyp">
+        <div class="hyp-top">
+          <span class="hyp-id">H5</span>
+          <span class="hyp-claim">Cortar produção dedicada de Facebook não afeta o público total.</span>
+        </div>
+        <div class="hyp-grid">
+          <div><div class="hyp-l">Como medir</div><div class="hyp-v">Seguidores de Facebook em agosto vs. julho</div></div>
+          <div><div class="hyp-l">Sucesso</div><div class="hyp-v">Queda &lt; <b>0,5%</b></div></div>
+          <div><div class="hyp-l">Se falhar</div><div class="hyp-v">Retomar 1 post semanal e reavaliar em outubro</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad">
+    <div class="sec-head">
+      <h2 class="sec-title">Plano de ação</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="tw">
+      <table>
+        <thead>
+          <tr><th>Ação</th><th>Responsável</th><th class="n">Prazo</th><th class="n">Liga a</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Reunião de alinhamento de expectativa para agosto</td><td>Atendimento</td><td class="n">08/08</td><td class="n">Risco 1</td></tr>
+          <tr><td>Realocar 18h de carrossel e estática para bastidor</td><td>Produção</td><td class="n">05/08</td><td class="n">H1</td></tr>
+          <tr><td>Incluir chamada para seguir no roteiro padrão</td><td>Criação</td><td class="n">05/08</td><td class="n">H3</td></tr>
+          <tr><td>Reduzir bastidores do YouTube para 3 minutos</td><td>Edição</td><td class="n">10/08</td><td class="n">H4</td></tr>
+          <tr><td>Gravar convite em vídeo para o show de SP</td><td>Produção</td><td class="n">12/08</td><td class="n">H2</td></tr>
+          <tr><td>Desligar produção dedicada de Facebook</td><td>Social</td><td class="n">01/08</td><td class="n">H5</td></tr>
+          <tr><td>Pautar 2 bastidores com faixas anteriores a Beira-Mar</td><td>Criação</td><td class="n">15/08</td><td class="n">Risco 3</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="pad">
+    <div class="sec-head">
+      <h2 class="sec-title">Sobre os dados</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="notes">
+      <ul>
+        <li>Ouvintes mensais e cidades do Spotify são <b>inseridos à mão</b> a partir do Spotify for Artists — não existem na API pública. Coletados em <code>01/08/2026</code>.</li>
+        <li>Números de TikTok também são manuais. Sujeitos a erro de digitação: conferir contra o app antes de fechar o relatório do cliente.</li>
+        <li>Alcance do Instagram é recalculado pela Meta por até <b>48 horas</b>. Coletar sempre a partir do dia 3 do mês seguinte, nunca no dia 1.</li>
+        <li>Retenção e tempo de exibição do YouTube vêm da API de Analytics e exigem autorização do dono do canal — não saem da API pública de dados.</li>
+        <li>Engajamento do Facebook está provavelmente subestimado: a API não contabiliza compartilhamentos feitos por terceiros.</li>
+        <li>Horas de produção vêm do apontamento da equipe, não de API. Se o apontamento falhar, as tabelas de retorno por formato perdem validade.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>AGÊNCIA LEBRE · DOCUMENTO INTERNO · DADOS FICTÍCIOS</span>
+    <span>FECHAMENTO DE JULHO · 01/08/2026</span>
+  </footer>
+
+</div>

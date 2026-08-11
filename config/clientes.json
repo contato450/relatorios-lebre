@@ -1,0 +1,58 @@
+{
+  "clientes": [
+    {
+      "nome": "Rionegro & Solimões",
+      "mlabs_assunto": "Relatório R&S",
+      "instagram": "https://www.instagram.com/rionegroesolimoes/",
+      "tiktok": "https://www.tiktok.com/@rionegroesolimoes",
+      "facebook": "https://www.facebook.com/rionegroesolimoesoficial/",
+      "spotify": "https://open.spotify.com/artist/33NrinbbEctw1wsdKNgZeZ",
+      "youtube": "https://www.youtube.com/channel/UCNpG2l1OT2dGCN8bHy_WO6A"
+    },
+    {
+      "nome": "Edy Britto & Samuel",
+      "mlabs_assunto": "Relatório Edy Britto & Samuel",
+      "instagram": "https://www.instagram.com/edybrittoesamuel/",
+      "tiktok": "https://www.tiktok.com/@edybrittoesamuel",
+      "facebook": "https://www.facebook.com/EdyBrittoESamuel",
+      "spotify": "https://open.spotify.com/intl-pt/artist/6UWCS7TrQo1V96jomn1k8U",
+      "youtube": "https://www.youtube.com/channel/UCLiLcbMiyqF5K4HwqPlnwSw"
+    },
+    {
+      "nome": "Emílio & Eduardo",
+      "mlabs_assunto": "Relatório Emílio & Eduardo",
+      "instagram": "https://www.instagram.com/emilioeeduardo",
+      "tiktok": "https://www.tiktok.com/@emilioeeduardooficial",
+      "facebook": "https://www.facebook.com/emilioeeduardo",
+      "spotify": "https://open.spotify.com/intl-pt/artist/0rlTeq5Mamduy8suAxsWuO",
+      "youtube": "https://www.youtube.com/@Em%C3%ADlioeEduardoOficial"
+    },
+    {
+      "nome": "João Neves",
+      "mlabs_assunto": "Relatório João Neves",
+      "instagram": "https://www.instagram.com/joaonevescantor/",
+      "tiktok": "https://www.tiktok.com/@joaonevescantor",
+      "facebook": "https://www.facebook.com/joaonevescantor/",
+      "spotify": "https://open.spotify.com/intl-pt/artist/5n93J6OZHLPXo8wcfqTSgp",
+      "youtube": "https://www.youtube.com/@JoaoNevesCantor"
+    },
+    {
+      "nome": "João Pedro & Cristiano",
+      "mlabs_assunto": "Relatório João Pedro & Cristiano",
+      "instagram": "https://www.instagram.com/joaopedroecristianooficial",
+      "tiktok": "https://www.tiktok.com/@joaopedroecristiano",
+      "facebook": "https://www.facebook.com/joaopedroecristianooficial",
+      "spotify": "https://open.spotify.com/intl-pt/artist/2vOcwgiDuTXso9PMEJjk3n",
+      "youtube": "https://www.youtube.com/@JoaoPedroeCristianoOficial"
+    },
+    {
+      "nome": "Silvio & Robson",
+      "mlabs_assunto": "Relatório Silvio & Robson",
+      "instagram": "https://www.instagram.com/silvioerobson_/",
+      "tiktok": null,
+      "facebook": "https://www.facebook.com/silvioerobsonoficial",
+      "spotify": "https://open.spotify.com/intl-pt/artist/2qZUpVP7q7sB7GV3M5isrr",
+      "youtube": "https://www.youtube.com/channel/UCaaRCNUAHNbGo_CzxWf-4Eg"
+    }
+  ]
+}
