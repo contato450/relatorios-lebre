@@ -1,29 +1,29 @@
 {
-  "coletado_em": "2026-10-02T15:11:25.452Z",
+  "coletado_em": "2026-11-02T18:58:25.467Z",
   "clientes": {
     "Rionegro & Solimões": {
-      "ouvintesMensais": 52,
-      "bruto": "5,2 mi ouvintes mensais"
+      "ouvintesMensais": 49,
+      "bruto": "4,9 mi ouvintes mensais"
     },
     "Edy Britto & Samuel": {
-      "ouvintesMensais": 12,
-      "bruto": "1,2 mi ouvintes mensais"
+      "ouvintesMensais": 11,
+      "bruto": "1,1 mi ouvintes mensais"
     },
     "Emílio & Eduardo": {
-      "ouvintesMensais": 7089,
-      "bruto": "708,9 mil ouvintes mensais"
+      "ouvintesMensais": 6153,
+      "bruto": "615,3 mil ouvintes mensais"
     },
     "João Neves": {
-      "ouvintesMensais": 1825,
-      "bruto": "182,5 mil ouvintes mensais"
+      "ouvintesMensais": 1468,
+      "bruto": "146,8 mil ouvintes mensais"
     },
     "João Pedro & Cristiano": {
-      "ouvintesMensais": 1298,
-      "bruto": "129,8 mil ouvintes mensais"
+      "ouvintesMensais": 1641,
+      "bruto": "164,1 mil ouvintes mensais"
     },
     "Silvio & Robson": {
-      "ouvintesMensais": 673,
-      "bruto": "673 ouvintes mensais"
+      "ouvintesMensais": 517,
+      "bruto": "517 ouvintes mensais"
     }
   }
 }
